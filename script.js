@@ -214,7 +214,7 @@ d3.select("#iter")
 // Play button animation
 (function () {
   const $iter = d3.select("#iter");
-  const $play = d3.select("#play");
+  const $play = d3.selectAll(".play");
   const max = +$iter.property("max");
   const min = +$iter.property("min");
   const step = +$iter.property("step") || 1;
