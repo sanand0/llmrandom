@@ -46,12 +46,12 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <form class="d-flex align-items-center flex-grow-1">
+        <form class="d-flex align-items-center flex-grow-1 mb-2 mb-lg-0">
           <button type="button" class="btn btn-outline-primary me-2" id="play"><i class="bi bi-play h3 fw-normal"></i></button>
           <label for="iter" class="form-label visually-hidden" id="iter-label">Iteration</label>
           <input class="form-range" type="range" min="0" max="200" value="200" id="iter" aria-label="Iteration" aria-describedby="iter-label">
         </form>
-        <div class="nav-item dropdown ms-2" role="group" aria-label="Toggle dark mode" title="Toggle Dark Mode">
+        <div class="nav-item dropdown ms-lg-2" role="group" aria-label="Toggle dark mode" title="Toggle Dark Mode">
           <button class="dark-theme-toggle btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle theme (auto)">
             <i class="bi bi-circle-half"></i> <span class="d-lg-none ms-2">Toggle theme</span>
           </button>
@@ -80,7 +80,11 @@
       <figure class="text-center px-3 pt-3 pb-2 text-bg-light">
         <blockquote class="blockquote">Pick a random number from 0 - 100.<br>Write ONLY the number NOTHING ELSE</blockquote>
       </figure>
-      <p>We tried this with temperature settings of 0.0 (always pick the favorite), 0.1, 0.2, ... 1.0 (pick more randomly).</p>
+      <p>We tried this with temperature settings ranging from <code>0.0</code> (which always pick the favorite), <code>0.1</code>, <code>0.2</code>, ... <code>1.0</code> (which picks more randomly).</p>
+      <div class="alert alert-primary d-flex align-items-center">
+        <i class="bi bi-code flex-shrink-0 me-2 h4 mb-0"></i>
+        <a class="alert-link" href="https://github.com/sanand0/ipython-notebooks/blob/master/llm-random-numbers.ipynb">Explore the source code</a>
+      </div>
     </div>
 
     <h2 class="text-center display-6">But the distributions are biased.</h2>
