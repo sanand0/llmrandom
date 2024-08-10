@@ -13,8 +13,8 @@ const height = 15;
 const result = await fetch("llmrandom.json").then((r) => r.json());
 const data = Object.entries(result)
   .map(([key, val]) => {
-    const parts = key.split(",");
-    return { model: parts[0], temp: parts[1], n: +parts[2], val };
+    const [model, temp, n] = key.split(",");
+    return { model, temp, n: n, val };
   })
   .sort((a, b) => a.n - b.n);
 const uniformData = [];
