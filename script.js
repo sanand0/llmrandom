@@ -155,12 +155,12 @@ const multipleRows = layer(
     const actual = d3.rollup(
       Object.entries(allFreq),
       (entries) => d3.sum(entries, (d) => d[1]),
-      ([val, freq]) => (+val % d == 0 ? "multiple" : "other"),
+      ([val]) => (+val % d == 0 ? "multiple" : "other"),
     );
     const expected = d3.rollup(
       Object.entries(uniformFreq),
       (entries) => d3.sum(entries, (d) => d[1]),
-      ([val, freq]) => (+val % d == 0 ? "multiple" : "other"),
+      ([val]) => (+val % d == 0 ? "multiple" : "other"),
     );
     const preference = actual.get("multiple") / expected.get("multiple");
     return { multiple: d, preference };
@@ -183,12 +183,12 @@ const endswithRows = layer(
     const actual = d3.rollup(
       Object.entries(allFreq),
       (entries) => d3.sum(entries, (d) => d[1]),
-      ([val, freq]) => (+val % 10 == d ? "endswith" : "other"),
+      ([val]) => (+val % 10 == d ? "endswith" : "other"),
     );
     const expected = d3.rollup(
       Object.entries(uniformFreq),
       (entries) => d3.sum(entries, (d) => d[1]),
-      ([val, freq]) => (+val % 10 == d ? "endswith" : "other"),
+      ([val]) => (+val % 10 == d ? "endswith" : "other"),
     );
     const preference = actual.get("endswith") / expected.get("endswith");
     return { endswith: d, preference };
@@ -216,7 +216,6 @@ d3.select("#iter")
   const $iter = d3.select("#iter");
   const $play = d3.selectAll(".play");
   const max = +$iter.property("max");
-  const min = +$iter.property("min");
   const step = +$iter.property("step") || 1;
   let interval;
   $play.on("click", function () {
